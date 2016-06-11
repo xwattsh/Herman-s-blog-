@@ -11,7 +11,7 @@
 </head>
 <body>
 	<header id = "main_navigation" class ="clearfix">
-	 <a href = "a" class = "name"> Herman Watts</a>
+	<%= link_to "Herman Watts", root_path, class: "name" %>
 	<nav>
 		<%= link_to "Articles", posts_path %>
 		<a href="#">Projects</a>
@@ -20,6 +20,15 @@
 	</header>
 
 <%= yield %>
+
+<footer id = "main_footer">
+	<p class = "copyright"> &copy 2016 Herman Watts</p>
+	<nav>
+		<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+		<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+		<a href="https://github.com/xwattsh" target = "_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+	</nav>
+</footer>
 
 </body>
 </html>

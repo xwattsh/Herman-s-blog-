@@ -1,8 +1,32 @@
-<%= @post.title %> <br>
-<%= @post.content %>
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+	<header>
+		<p class="date"><%= @post.created_at.strftime('%A. %B %d') %></p>
+		<h1><%= @post.title %></h1>
+		<hr>
+	</header>
+   <div id="content">
+   <%= @post.content %>
+
+ </div>
+
+ <hr>
+
+<div id="share_box">
+	<p>Share The DO List</p>
+	<a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @_HermanWatts - &amp;<%= url_for([@post, {only_path: false}]) %>','_blank','width=800,height=500, left=300');void(0);">
+     </s><i class="fa fa-twitter" aria-hidden="true"></i>
+     </a>
+     <a onclick="javascript:window.open('http://facebook.com/sharer.php?url=<%= @post.title %> by @_HermanWatts - &amp;<%= url_for([@post, {only_path: false}]) %>','_blank','width=800,height=500, left=300');void(0);">
+     </s><i class="fa fa-facebook" aria-hidden="true"></i>
+     </a>
+     <a onclick="javascript:window.open('http://plus.google.com/share?url=<%= @post.title %> by @_HermanWatts - &amp;<%= url_for([@post, {only_path: false}]) %>','_blank','width=800,height=500, left=300');void(0);">
+     </s><i class="fa fa-google-plus" aria-hidden="true"></i>
+     </a>
+</div>
+
+<hr>
+
+</div>
 
 <br>
 <br>
-
-<%= link_to "Edit", edit_post_path(@post) %>
-<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this post?"} %>
