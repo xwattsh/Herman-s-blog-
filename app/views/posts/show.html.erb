@@ -5,7 +5,7 @@
 		<hr>
 	</header>
    <div id="content">
-   <%= @post.content %>
+   <%= markdown @post.content %>
 
  </div>
 
@@ -13,20 +13,21 @@
 
 <div id="share_box">
 	<p>Share The DO List</p>
+	<!-- Twitter -->
 	<a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @_HermanWatts - &amp;<%= url_for([@post, {only_path: false}]) %>','_blank','width=800,height=500, left=300');void(0);">
      </s><i class="fa fa-twitter" aria-hidden="true"></i>
      </a>
+     <!-- Facebook -->
      <a onclick="javascript:window.open('http://facebook.com/sharer.php?url=<%= @post.title %> by @_HermanWatts - &amp;<%= url_for([@post, {only_path: false}]) %>','_blank','width=800,height=500, left=300');void(0);">
      </s><i class="fa fa-facebook" aria-hidden="true"></i>
      </a>
+     <!-- Google Plus -->
      <a onclick="javascript:window.open('http://plus.google.com/share?url=<%= @post.title %> by @_HermanWatts - &amp;<%= url_for([@post, {only_path: false}]) %>','_blank','width=800,height=500, left=300');void(0);">
      </s><i class="fa fa-google-plus" aria-hidden="true"></i>
      </a>
 </div>
 
 <hr>
-
 </div>
 
-<br>
-<br>
+<%= link_to "Edit", edit_post_path(@post) %>
