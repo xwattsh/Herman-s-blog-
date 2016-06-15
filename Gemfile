@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'friendly_id', '~> 5.1'
 gem 'will_paginate', '~> 3.1'
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
